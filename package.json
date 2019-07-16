@@ -1,0 +1,25 @@
+{
+  "name": "tugaskelompok10",
+  "version": "1.0.0",
+  "description": "Kelompok 10, list anggota : yoga satrianda, rangga kuswendi, firman alamsyah",
+  "main": "index.js",
+  "scripts": {
+    "start" :"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/putrabandung38/tugasbesar.git"
+  },
+  "author": "kelompok 10",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/putrabandung38/tugasbesar/issues"
+  },
+  "homepage": "https://github.com/putrabandung38/tugasbesar#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}
