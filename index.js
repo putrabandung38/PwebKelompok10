@@ -9,19 +9,21 @@ app.use(bodyParser.json());
 
 const homeRouter = require('./routes/home');
 const booksRouter = require('./routes/books');
+const userRouter = require('./routes/user');
 //const booksRouter = require('./routes/books');  buat dulu di routes user (login)
 
 //logg
 //belum dibuat
-//const productRouter = require('./routes/user');
 
 const sequelize = require('./configs/sequelize');
 
 const Books = require('./models/Books');
 
+//const User = require('./models/user');
+
 app.use(homeRouter);
 app.use('/books', booksRouter);
-//app.use('/user', userRouter);
+app.use('/user', userRouter);
 
 app.listen(3012, () => {
 
