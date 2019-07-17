@@ -52,7 +52,7 @@ module.exports.postLogin= (req, res) => {
         })
     })
 }
-
+ 
 // module.exports.postLogin= (req, res) => {
 // 	User
 // 		.findOne({

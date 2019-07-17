@@ -1,7 +1,22 @@
+const bcrypt =require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const dotenv =require('dotenv');
+
+dotenv.config();
+
 const Books = require('../models/books');
 
 module.exports.getIndexBooks = (req, res) => {
-
+    jwt.verify(req.token, process.env.SECRETKEY, (error, authData) => {
+        if (error) {
+            res.sendStatus(403);
+        } else {
+            res.json({
+                message: "OK",
+                authData: authData
+            })
+        }
+    })
 }
 
 
