@@ -8,10 +8,12 @@ const booksController = require('../controllers/books');
 const auth = require ('../configs/auth');
 //script
 
-router.get('/', auth.verifyToken, booksController.getIndexBooks)
-router.get('/', booksController.getIndexBooks);
-router.post('/add', booksController.postBooks)
-router.put('/put:id', booksController.putBooks)
-router.delete('/delete:id', booksController.deleteBooks)
+router.get('/', auth.verifyToken, booksController.getAllBooks)
+router.get('/:id', auth.verifyToken, booksController.detailBooks);
+router.post('/', auth.verifyToken, booksController.createBooks);
+router.put('/:id', auth.verifyToken, booksController.updateBooks)
+router.delete('/:id', auth.verifyToken, booksController.deleteBooks)
+
 
 module.exports = router;
+

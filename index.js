@@ -9,25 +9,28 @@ app.use(bodyParser.json());
 
 const homeRouter = require('./routes/home');
 const booksRouter = require('./routes/books');
-const userRouter = require('./routes/user');
-//const booksRouter = require('./routes/books');  buat dulu di routes user (login)
-
-//logg
-//belum dibuat
+const registerRouter = require('./routes/user');
+//order
+const orderRouter = require('./routes/order'); //
 
 const sequelize = require('./configs/sequelize');
 
 const Books = require('./models/Books');
+const User = require('./models/User');
+const Order = require('./models/Order');  //
 
-//const User = require('./models/user');
 
 app.use(homeRouter);
 app.use('/books', booksRouter);
-app.use('/user', userRouter);
+app.use('/user', registerRouter); 
+app.use('/orders', orderRouter);  //
 
-app.listen(3012, () => {
+
+//port
+app.listen(3210, () => {
 
 	console.log('server berjalan')
 	sequelize.sync()	
 
-}	)
+}	
+)
